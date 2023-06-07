@@ -1,0 +1,49 @@
+{
+	"Name": "HPF stage",
+	"Description": "HPF stage based on AD8676",
+	"Tool": "FW",
+	"Version": "1.1",
+	"Design": {
+		"visitedTabs": [
+			"filter-type",
+			"specifications",
+			"components"
+		],
+		"filterType": "highPass",
+		"specifications": {
+			"gain": 15,
+			"gainUnit": "dB",
+			"passbandAttenuation": -3,
+			"passbandFrequency": 0.1,
+			"stopbandAttenuation": -35,
+			"stopbandFrequency": 0.01,
+			"filterResponseValue": 0.3,
+			"filterResponseSlider": "26"
+		},
+		"components": {
+			"vsPlus": 5,
+			"vsMinus": -5,
+			"optimization": "RecommendedSpecificComponents",
+			"optimizationPreference": "specific",
+			"compensateForGbw": false,
+			"stages": [
+				{
+					"stageLetter": "A",
+					"componentSizing": 166,
+					"gain": 323,
+					"gainEnabled": true,
+					"implementation": "sallenKey",
+					"opAmps": "AD8676"
+				}
+			],
+			"recommendedAmps": [],
+			"sortOrder": [
+				0
+			]
+		},
+		"tolerances": {},
+		"nextSteps": {}
+	},
+	"CreatedDate": "2023-06-06 10:13:27 AM",
+	"UpdatedDate": "2023-06-06 10:13:27 AM"
+}

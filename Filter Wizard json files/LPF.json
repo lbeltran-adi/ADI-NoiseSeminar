@@ -1,0 +1,49 @@
+{
+	"Name": "LPF",
+	"Description": "LPF",
+	"Tool": "FW",
+	"Version": "1.1",
+	"Design": {
+		"visitedTabs": [
+			"filter-type",
+			"specifications",
+			"components"
+		],
+		"filterType": "lowPass",
+		"specifications": {
+			"gain": 15,
+			"gainUnit": "dB",
+			"passbandAttenuation": -3,
+			"passbandFrequency": 10,
+			"stopbandAttenuation": -35,
+			"stopbandFrequency": 100,
+			"filterResponseValue": 0.3,
+			"filterResponseSlider": "26"
+		},
+		"components": {
+			"vsPlus": 5,
+			"vsMinus": -5,
+			"optimization": "RecommendedSpecificComponents",
+			"optimizationPreference": "specific",
+			"compensateForGbw": false,
+			"stages": [
+				{
+					"stageLetter": "A",
+					"componentSizing": 129,
+					"gain": -1,
+					"gainEnabled": false,
+					"implementation": "multipleFeedback",
+					"opAmps": "AD8676"
+				}
+			],
+			"recommendedAmps": [],
+			"sortOrder": [
+				0
+			]
+		},
+		"tolerances": {},
+		"nextSteps": {}
+	},
+	"CreatedDate": "2023-06-06 10:32:31 AM",
+	"UpdatedDate": "2023-06-06 10:32:31 AM"
+}
