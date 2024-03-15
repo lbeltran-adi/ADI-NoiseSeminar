@@ -2,12 +2,14 @@
 	"Name": "LPF",
 	"Description": "LPF",
 	"Tool": "FW",
-	"Version": "1.1",
+	"Version": "1.2",
 	"Design": {
 		"visitedTabs": [
 			"filter-type",
 			"specifications",
-			"components"
+			"components",
+			"tolerances",
+			"next-steps"
 		],
 		"filterType": "lowPass",
 		"specifications": {
@@ -18,7 +20,7 @@
 			"stopbandAttenuation": -35,
 			"stopbandFrequency": 100,
 			"filterResponseValue": 0.3,
-			"filterResponseSlider": "26"
+			"filterResponseSlider": 26
 		},
 		"components": {
 			"vsPlus": 5,
@@ -26,14 +28,17 @@
 			"optimization": "RecommendedSpecificComponents",
 			"optimizationPreference": "specific",
 			"compensateForGbw": false,
+			"preferredAlgorithms": {
+				"sallenKey|lowPass": "lowpassV2"
+			},
 			"stages": [
 				{
 					"stageLetter": "A",
-					"componentSizing": 129,
-					"gain": -1,
-					"gainEnabled": false,
-					"implementation": "multipleFeedback",
-					"opAmps": "AD8676"
+					"componentSizing": 120,
+					"gain": 254,
+					"gainEnabled": true,
+					"implementation": "sallenKey",
+					"opAmps": "ADA4510-2"
 				}
 			],
 			"recommendedAmps": [],
@@ -41,9 +46,17 @@
 				0
 			]
 		},
-		"tolerances": {},
+		"tolerances": {
+			"resistorTolerance": "1%",
+			"capacitorTolerance": "5%",
+			"inductorTolerance": "5%",
+			"opAmpGbwTolerance": "20%",
+			"resistorPreferredSeries": "E96",
+			"capacitorPreferredSeries": "E24",
+			"inductorPreferredSeries": "E12"
+		},
 		"nextSteps": {}
 	},
-	"CreatedDate": "2023-06-06 10:32:31 AM",
-	"UpdatedDate": "2023-06-06 10:32:31 AM"
+	"CreatedDate": "2024-03-15 06:37:37 PM",
+	"UpdatedDate": "2024-03-15 06:37:37 PM"
 }
