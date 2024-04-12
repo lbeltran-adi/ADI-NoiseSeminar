@@ -1,13 +1,15 @@
 {
-	"Name": "HPF stage",
-	"Description": "HPF stage based on AD8676",
+	"Name": "HPF",
+	"Description": "High Pass filter",
 	"Tool": "FW",
-	"Version": "1.1",
+	"Version": "1.2",
 	"Design": {
 		"visitedTabs": [
 			"filter-type",
 			"specifications",
-			"components"
+			"components",
+			"tolerances",
+			"next-steps"
 		],
 		"filterType": "highPass",
 		"specifications": {
@@ -18,7 +20,7 @@
 			"stopbandAttenuation": -35,
 			"stopbandFrequency": 0.01,
 			"filterResponseValue": 0.3,
-			"filterResponseSlider": "26"
+			"filterResponseSlider": 26
 		},
 		"components": {
 			"vsPlus": 5,
@@ -26,14 +28,17 @@
 			"optimization": "RecommendedSpecificComponents",
 			"optimizationPreference": "specific",
 			"compensateForGbw": false,
+			"preferredAlgorithms": {
+				"sallenKey|lowPass": "lowpassV2"
+			},
 			"stages": [
 				{
 					"stageLetter": "A",
-					"componentSizing": 166,
-					"gain": 323,
+					"componentSizing": 168,
+					"gain": 311,
 					"gainEnabled": true,
 					"implementation": "sallenKey",
-					"opAmps": "AD8676"
+					"opAmps": "ADA4510-2"
 				}
 			],
 			"recommendedAmps": [],
@@ -41,9 +46,17 @@
 				0
 			]
 		},
-		"tolerances": {},
+		"tolerances": {
+			"resistorTolerance": "1%",
+			"capacitorTolerance": "5%",
+			"inductorTolerance": "5%",
+			"opAmpGbwTolerance": "20%",
+			"resistorPreferredSeries": "E96",
+			"capacitorPreferredSeries": "E24",
+			"inductorPreferredSeries": "E12"
+		},
 		"nextSteps": {}
 	},
-	"CreatedDate": "2023-06-06 10:13:27 AM",
-	"UpdatedDate": "2023-06-06 10:13:27 AM"
+	"CreatedDate": "2024-04-12 03:38:21 PM",
+	"UpdatedDate": "2024-04-12 03:38:21 PM"
 }

@@ -1,6 +1,6 @@
 {
 	"Name": "LPF",
-	"Description": "LPF",
+	"Description": "Low Pass filter",
 	"Tool": "FW",
 	"Version": "1.2",
 	"Design": {
@@ -27,17 +27,17 @@
 			"vsMinus": -5,
 			"optimization": "RecommendedSpecificComponents",
 			"optimizationPreference": "specific",
-			"compensateForGbw": false,
+			"compensateForGbw": true,
 			"preferredAlgorithms": {
 				"sallenKey|lowPass": "lowpassV2"
 			},
 			"stages": [
 				{
 					"stageLetter": "A",
-					"componentSizing": 120,
-					"gain": 254,
-					"gainEnabled": true,
-					"implementation": "sallenKey",
+					"componentSizing": 123,
+					"gain": -1,
+					"gainEnabled": false,
+					"implementation": "multipleFeedback",
 					"opAmps": "ADA4510-2"
 				}
 			],
@@ -57,6 +57,6 @@
 		},
 		"nextSteps": {}
 	},
-	"CreatedDate": "2024-03-15 06:37:37 PM",
-	"UpdatedDate": "2024-03-15 06:37:37 PM"
+	"CreatedDate": "2024-04-12 03:42:50 PM",
+	"UpdatedDate": "2024-04-12 03:42:50 PM"
 }
